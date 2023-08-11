@@ -18,6 +18,8 @@ async function loginRoute(request, response) {
 
   response.end(JSON.stringify({ token }))
 }
+
+
 function isHeadersValid(headers) {
   try {
     const auth = headers.authorization.replace(/bearer\s/ig, '')
@@ -42,4 +44,6 @@ async function handler(request, response) {
 
 const app = createServer(handler)
 
-app.listen(3000, () => console.log('listening at 3000'))
+
+
+export { app, handler }
